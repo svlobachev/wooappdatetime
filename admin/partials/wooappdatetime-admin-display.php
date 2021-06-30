@@ -32,12 +32,14 @@ class Wooappdatetime_content{
     }
 
     function ajax_response(){
-        global $json; // this is how you get access to the database
-        $json = $_POST['json'];
-        echo $json;
-        wp_die(); // this is required to terminate immediately and return a proper response
+        //global $json; // this is how you get access to the database
+
+        if($_POST['get_user_locale']) {
+            $locale =explode("_",get_user_locale());//получим язык wordpress
+            echo $locale[0];
+            wp_die(); // this is required to terminate immediately and return a proper response
+        }
+
     }
 }
 ?>
-
-<!-- This file should primarily consist of HTML with a little bit of PHP. -->
