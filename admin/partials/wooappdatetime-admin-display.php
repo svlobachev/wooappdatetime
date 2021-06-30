@@ -14,7 +14,8 @@
 class Wooappdatetime_content{
 
     function settings(){
-        echo "Hello my Settings!";
+        echo "Hello my Settings!<br />";
+        echo get_user_locale();
     }
 
     function gopro(){
